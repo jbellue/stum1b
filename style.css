@@ -1,0 +1,118 @@
+body {
+    font-family: Arial;
+}
+
+.part1 {
+    --main-bg-color: #ec6260;
+}
+.part2 {
+    --main-bg-color: #6da715;
+}
+.part3 {
+    --main-bg-color: #2ebcf0;
+}
+
+h1 {
+    counter-reset: chapitre;
+    counter-increment: partie;
+    background-color: var(--main-bg-color);
+    color: white;
+}
+h1::after {
+    content: " " counter(partie);
+    white-space: pre;
+    font-size: 7rem;
+}
+
+h2:not(.uncounted) {
+    counter-reset: paragraphe;
+    counter-increment: chapitre;
+    border-bottom: 2px solid #2ebcf0;
+}
+h2:not(.uncounted)::after {
+    color: var(--main-bg-color);
+    content: "\A" counter(chapitre);
+    white-space: pre;
+    font-size: 5rem;
+}
+
+h3 {
+    counter-reset: composite;
+    counter-increment: paragraphe;
+    background-color: var(--main-bg-color);
+    border-style: solid;
+    border-width: 1px;
+    width: fit-content;
+}
+h3::before {
+    content: counter(paragraphe) " ";
+    background-color: white;
+}
+
+h4:not(.uncounted) {
+    counter-reset: detail;
+    counter-increment: composite;
+}
+
+h4:not(.uncounted)::before {
+    content: counter(paragraphe) "." counter(composite) " ";
+}
+
+h5 {
+    counter-reset: sub-detail;
+    counter-increment: detail;
+}
+h5::before {
+    content: counter(paragraphe) "." counter(composite) "." counter(detail) " ";
+}
+
+h6 {
+    counter-increment: sub-detail;
+}
+h6::before {
+    content: counter(paragraphe) "." counter(composite) "." counter(detail) "." counter(sub-detail) " ";
+}
+
+p {
+    text-indent: 1rem;
+}
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+ul > li > ul {
+    list-style-type: none;
+}
+
+ul > li > ul > li::before {
+    content: "- ";
+}
+
+.remarque {
+    color: #2ebcf0;
+    font-weight: bold;
+    text-indent: 0;
+}
+
+.pageNumber {
+    position: absolute;
+    right: 10px;
+    background-color: var(--main-bg-color);
+}
+
+#tableOfContents {
+    width: 25%;
+    position: fixed !important;
+    top: 0;
+}
+
+#content {
+    position: absolute;
+    left: 30%;
+}
