@@ -18,6 +18,7 @@ h1 {
     counter-increment: partie;
     background-color: var(--main-bg-color);
     color: white;
+    font-size: 2.5rem;
 }
 h1::after {
     content: " " counter(partie);
@@ -29,6 +30,7 @@ h2:not(.uncounted) {
     counter-reset: paragraphe;
     counter-increment: chapitre;
     border-bottom: 2px solid #2ebcf0;
+    font-size: 2rem;
 }
 h2:not(.uncounted)::after {
     color: var(--main-bg-color);
@@ -44,6 +46,7 @@ h3 {
     border-style: solid;
     border-width: 1px;
     width: fit-content;
+    font-size: 1.5rem;
 }
 h3::before {
     content: counter(paragraphe) " ";
@@ -53,6 +56,7 @@ h3::before {
 h4:not(.uncounted) {
     counter-reset: detail;
     counter-increment: composite;
+    font-size: 1.3rem;
 }
 
 h4:not(.uncounted)::before {
@@ -62,6 +66,7 @@ h4:not(.uncounted)::before {
 h5 {
     counter-reset: sub-detail;
     counter-increment: detail;
+    font-size: 1rem;
 }
 h5::before {
     content: counter(paragraphe) "." counter(composite) "." counter(detail) " ";
@@ -69,6 +74,7 @@ h5::before {
 
 h6 {
     counter-increment: sub-detail;
+    font-size: 1rem;
 }
 h6::before {
     content: counter(paragraphe) "." counter(composite) "." counter(detail) "." counter(sub-detail) " ";
