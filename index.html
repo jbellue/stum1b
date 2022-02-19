@@ -43,15 +43,16 @@
             </p>
             <p>L'ensemble de ces modules est géré en standard Télétel par une couche de logiciel centralisé appelé Protocole permettant l'aiguillage des données entre les différents modules et la mise en oeuvre de fonctionnement particuliers. En standard Téléinformatique le Protocole est figé et il n'est plus possible de modifier les chemins suivis par les données.</p>
             <span class="pageNumber" id="p14">14</span>
-            <!-- TODO inline these images -->
-            <figure>
-                <img src="img/p14/1.png">
-                <figcaption>Architecture du Minitel en standard Télétel</figcaption>
-            </figure>
-            <figure>
-                <img src="img/p14/2.png">
-                <figcaption>Architecture du Minitel en standard Téléinformatique</figcaption>
-            </figure>
+            <div class="inline-images">
+                <figure>
+                    <img src="img/p14/1.png">
+                    <figcaption>Architecture du Minitel en standard Télétel</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/p14/2.png">
+                    <figcaption>Architecture du Minitel en standard Téléinformatique</figcaption>
+                </figure>
+            </div>
             <h4 class="uncounted" id="0-1-4">L'utilisation du Minitel 1B</h4>
             <p>
                 Le Minitel 1B peut être utilisé de trois façons différentes :
@@ -103,7 +104,7 @@
             <p>Le tableau suivant précise pour chaque module les différents modes de fonctionnement possibles en fonction du standard.</p>
             <table>
                 <thead>
-                    <tr>
+                    <tr class="dark-blue">
                         <th colspan="3">ECRAN</th>
                         <th>CLAVIER</th>
                         <th>MODEM</th>
@@ -112,7 +113,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="light-blue">
                         <td rowspan="2">Standard Télétel</td>
                         <td>Mode Vidéotex norme CEPT 2</td>
                         <td>- 40 colonnes vidéotex (alpha-mosaïque, double hauteur, double taille...).</td>
@@ -121,12 +122,12 @@
                         <td rowspan="2">Echanges bidirectionnels simultanés.</td>
                         <td rowspan="2">Actif</td>
                     </tr>
-                    <tr>
+                    <tr class="light-blue">
                         <td>Mode Mixte</td>
                         <td>- 80 colonnes ASCII norme ISO 6429 (jeu français ou américain) ; mode rouleau ou mode page.</td>
                         <td>"Standard" ASCII avec Ctrl, Esc, touches de gestion du curseur et d'édition, mode minuscule par défaut + touches de fonction Télétel.</td>
                     </tr>
-                    <tr>
+                    <tr class="dark-blue">
                         <td colspan="2">Standard Téléinformatique ASCII</td>
                         <td>- 80 colonnes ASCII norme ISO 6429 (jeu français ou américain) ; mode rouleau.<br>- Possibilité de 40 colonnes ASCII.</td>
                         <td>"Standard" ASCII avec Ctrl, Esc, touches de gestion du curseur et d'édition, mode minuscule par défaut. Les touches fonction Télétel engendrent alors des séquences autres qu'en mode Vidéotex ou Mixte (le codage correspond aux touches de fonction d'un terminal téléinformatique).</td>
@@ -419,15 +420,16 @@
                 <p>Ce jeu de caractères n'est disponible que lorsque le Minitel est en standard Télétel, mode Vidéotex.</p>
                 <p>L'ensemble semi-graphique comporte 128 formes mosaïques (64 jointes et 64 disjointes).</p>
                 <p>Chaque forme est obtenue en divisant la matrice (8 x 10) en 6 cases. Les points d'une case appartiennent soit au caractère lui-même, soit au fond de l'écran, définissant ainsi les 128 formes différentes possibles. Chaque caractère peut être disjoint : 2 barres verticales et 3 barres horizontales appartenant au fond de l'écran sont alors visualisées.</p>
-                <!-- TODO inline these images -->
-                <figure>
-                    <img src="img/p31/1.png">
-                    <figcaption>semi-graphique normal</figcaption>
-                </figure>
-                <figure>
-                    <img src="img/p31/2.png">
-                    <figcaption>semi-graphique disjoint</figcaption>
-                </figure>
+                <div class="inline-images">
+                    <figure>
+                        <img src="img/p31/1.png">
+                        <figcaption>semi-graphique normal</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/p31/2.png">
+                        <figcaption>semi-graphique disjoint</figcaption>
+                    </figure>
+                </div>
                 <h4 id="1-3-2-4">Attributs de visualisation</h4>
                 <h5 id="1-3-2-4-1">Définition</h5>
                 <p>Un caractère est déterminé par sa forme, mais aussi par sa présentation définie par un ou plusieurs attributs de visualisation.</p>
@@ -622,11 +624,14 @@
                 <span class="pageNumber" id="p38">38</span>
                 <h4 id="1-4-2-3">Touches numériques</h4>(partie 3 sur les photos)
                 <p>Les touches numériques correspondent aux chiffres indiqués sur chaque touche. Utilisées avec la touche spéciale ou la touche "Ctrl," elles correspondent à des symboles particuliers selon le tableau ci-dessous.</p>
-                <!-- TODO figure out how to properly to this table -->
-                <table>
+                <!-- TODO figure out how to properly do this table -->
+                <table class="darker-blue-header-ugly-yellow-body dark-blue-first-row">
                     <thead>
-                        <tr>
-                            <th></th>
+                        <tr class="dark-blue">
+                            <th>
+                                <span class="diagonal-cell--topRight">Touches numériques</span>
+                                <span class="diagonal-cell--bottomLeft">utilisées avec</span>
+                            </th>
                             <th>1</th>
                             <th>2</th>
                             <th>3</th>
@@ -659,13 +664,13 @@
                         </tr>
                         <tr>
                             <td>Touche "Ctrl"<br>Standard Télétel Mode Vidéotex</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><!-- TODO line --></td>
+                            <td><!-- TODO line --></td>
+                            <td><!-- TODO line --></td>
+                            <td><!-- TODO line --></td>
+                            <td><!-- TODO line --></td>
+                            <td><!-- TODO line --></td>
+                            <td><!-- TODO line --></td>
                             <td>←</td>
                             <td>→</td>
                             <td>°</td>
@@ -750,7 +755,7 @@
                         <p>Associées avec la touche spéciale, les touches de fonction listées ci-dessus<span class="pageNumber" id="p39">39</span> permettent, en mode Vidéotex, l'envoi des accents aigu, grave, circonflexe, tréma et des caractères suivants :</p>
                         <!-- TODO lines --><p>TODO ╱ et §</p>
                         <p>(§ uniquement pour les Minitel ayant la sérigraphie correspondante sur le clavier, c'est-à-dire les terminaux équipés du composant VGP5, les autres affichant une barre basse).</p>
-                        <table>
+                        <table class="dark-blue-first-row light-blue">
                             <thead>
                                 <tr>
                                     <th>Touches de fonction</th>
@@ -768,7 +773,7 @@
                                     <td colspan="2" style="text-align:center">Validation d'une ou plusieurs chaînes de caractères (1)</td>
                                 </tr>
                                 <tr>
-                                    <td>Sans obligation de remplir tous les champs</td>
+                                    <td class="light-blue">Sans obligation de remplir tous les champs</td>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -802,7 +807,7 @@
                                     <td colspan="2" style="text-align:center">Effacement du caractère précédant le caractère courant<br>Si le champ courant est vide ou en absence de champ :</td>
                                 </tr>
                                 <tr>
-                                    <td>Pas de signification</td>
+                                    <td class="light-blue">Pas de signification</td>
                                     <td>Retour à l'écran de la demande avec conservation des informations antérieures et possibilité de les corriger</td>
                                 </tr>
                                 <tr>
@@ -810,7 +815,7 @@
                                     <td colspan="2" style="text-align:center">Effacement du champ courant<br>Si le champ courant est vide ou en absence de champ :</td>
                                 </tr>
                                 <tr>
-                                    <td>Pas de signification</td>
+                                    <td class="light-blue">Pas de signification</td>
                                     <td>Annulation de la demande et possibilité d'en faire une autre par retour à la phase initiale de saisie</td>
                                 </tr>
                                 <tr>
@@ -869,7 +874,7 @@
                     <li>
                         <p>Dans ce standard, les touches de fonction employées seules correspondent aux touches PF1 à PF4 et aux quatre autres touches de fonction d'un terminal téléinformatique programmé en mode application. Leur interprétation dépend du service avec lequel le Minitel est en relation.</p>
                         <p>Le tableau suivant donne les équivalences entre les touches :</p>
-                        <table>
+                        <table class="light-blue-header-darker-body">
                             <thead>
                                 <tr>
                                     <th>Touches du Minitel</th>
@@ -1079,7 +1084,7 @@
                 <h5 id="1-5-1-2-1">Modulation</h5>
                 <p>La modulation s'effectue par déplacement de fréquence sur réception série, bit à bit, des données émises par le microprocesseur (via le coupleur). En mode standard, le déplacement de fréquence correspond à une excursion de ±30 Hz, modulant une porteuse à 420 Hz.</p>
                 <p>Les rapidités de modulation et les fréquences caractéristiques de la voie d'émission sont résumées dans le tableau suivant :</p>
-                <table>
+                <table class="light-blue-header-darker-body">
                     <thead>
                         <tr>
                             <th>état du modem</th>
@@ -1114,7 +1119,7 @@
                 <h5 id="1-5-1-2-2">Démodulation</h5>
                 <p>La démodulation s'effectue par détection de déplacement de fréquence sur réception de caractères à 10 bits transmis par la ligne téléphonique. En mode standard, le déplacement de fréquence correspond à une excursion de ±400 Hz, modulant une porteuse à 1700 Hz.</p>
                 <p>Les rapidités de modulation et les fréquences caractéristiques de la voie de réception sont résumées dans le tableau suivant :</p>
-                <table>
+                <table class="light-blue-header-darker-body">
                     <thead>
                         <tr>
                             <th>état du modem</th>
@@ -1620,13 +1625,18 @@
                 <p>La capacité de correction du code utilisé est d'un bit par bloc.</p>
                 <p>La correction d'un bloc valide est engagée si le reste R'(x) est non nul et si il y à une erreur de parité et une seule.</p>
                 <p>L'hypothèse d'une erreur bit permet d'écrire la relation suivante :</p>
-                <!-- TODO this needs prettifying -->
                 <p>T'(x) = T(x) + x<sup>p</sup></p>
-                <p>où T'(x) représente le polynôme reçu par le Minitel</p>
-                <p>T(x) représente le polynôme émis par le point d'accès</p>
-                <p>x<sup>p</sup> représente l'erreur introduite par la transmission.</p>
-                <p>D'autre part, on a T'(x) = G(x) Q'(x) + R'(x)</p>
-                <p>T(x) = G(x) Q(x) puisque T'(x) est parfaitement divisible par G(x).</p>
+                où :
+                <ul>
+                    <li>T'(x) représente le polynôme reçu par le Minitel</li>
+                    <li>T(x) représente le polynôme émis par le point d'accès</li>
+                    <li>x<sup>p</sup> représente l'erreur introduite par la transmission.</li>
+                </ul>
+                D'autre part, on a :
+                <ul>
+                    <li>T'(x) = G(x) Q'(x) + R'(x)</li>
+                    <li>T(x) = G(x) Q(x) puisque T'(x) est parfaitement divisible par G(x).</li>
+                </ul>
                 <p>Ce qui permet d'écrire: G(x) Q'(x) + R'(x) = G(x) Q(x) + x<sup>p</sup></p>
                 <p>soit R'(x) = x<sup>p</sup> modulo G(x)</p>
                 <span class="pageNumber" id="p64">64</span>
@@ -1816,15 +1826,13 @@
                 <p>Le traitement des autres commandes dépend du standard du Minitel, et est décrit aux <a href="#2-7">chapitres 7 de la partie 2</a> et <a href="#3-5">5 de la partie 3</a>.</p>
                 <h3 id="1-7-4">Tables de transcodage</h3>
                 <h4 id="1-7-4-1">Table de transcodage VGP5</h4>
-                <table id="table2-8">
+                <table id="table2-8" class="light-blue-header-darker-body">
                     <thead>
                         <tr>
                             <th>MINITEL</th>
                             <th colspan="2">Imprimante avec jeu américain</th>
                             <th colspan="2">Imprimante avec jeu français</th>
                         </tr>
-                    </thead>
-                    <tbody>
                         <tr>
                             <td>visualisation VGP5</td>
                             <td>code émis</td>
@@ -1832,6 +1840,8 @@
                             <td>code émis</td>
                             <td>visualisation</td>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td>~</td>
                             <td>0x7E</td>
@@ -2165,15 +2175,13 @@
                 </table>
                 <h4 id="1-7-4-2">Table de transcodage VGP2</h4>
                 <p>Ce tableau représente le transcodage effectué pour les lettres accentuées majuscules. Pour les autres caractères, se reporter aux tableaux relatifs à VGP5.</p>
-                <table id="table2-9">
+                <table id="table2-9" class="light-blue-header-darker-body">
                     <thead>
                         <tr>
                             <th>MINITEL</th>
                             <th colspan="2">Imprimante avec jeu américain</th>
                             <th colspan="2">Imprimante avec jeu français</th>
                         </tr>
-                    </thead>
-                    <tbody>
                         <tr>
                             <td>visualisation VGP5</td>
                             <td>code émis</td>
@@ -2181,6 +2189,8 @@
                             <td>code émis</td>
                             <td>visualisation</td>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td>Â</td>
                             <td>0x41</td>
@@ -2277,19 +2287,20 @@
                 <p>Dans l'état local, l'écho est réalisé par le terminal lui-même puisqu'il y a bouclage au niveau du module modem. L'écho est alors local.</p>
                 <p class="remarque">Remarque</p>
                 <p>Il est possible, par une commande clavier ou une commande Protocole, de réaliser un écho local lorsque le Minitel est connecté et que la base de données n'assure pas l'écho. De même, il est possible de supprimer l'écho local (Minitel non connecté) si les périphériques se chargent de renvoyer en écho vers l'écran tous les caractères émis par le clavier. (<a href="#2-3-3">partie 2, chapitre 3, paragraphe 3</a>).</p>
-                <!-- TODO inline these images -->
-                <figure id="schema1-1">
-                    <img src="img/p81/1.png">
-                    <figcaption>Architecture du Minitel en standard Téletel</figcaption>
-                </figure>
-                <figure id="schema1-2">
-                    <img src="img/p81/2.png">
-                    <figcaption>Aiguillages standard de l'état local</figcaption>
-                </figure>
-                <figure id="schema1-3">
-                    <img src="img/p81/3.png">
-                    <figcaption>Aiguillages standard de l'état connecté</figcaption>
-                </figure>
+                <div class="inline-images">
+                    <figure id="schema1-1">
+                        <img src="img/p81/1.png">
+                        <figcaption>Architecture du Minitel en standard Téletel</figcaption>
+                    </figure>
+                    <figure id="schema1-2">
+                        <img src="img/p81/2.png">
+                        <figcaption>Aiguillages standard de l'état local</figcaption>
+                    </figure>
+                    <figure id="schema1-3">
+                        <img src="img/p81/3.png">
+                        <figcaption>Aiguillages standard de l'état connecté</figcaption>
+                    </figure>
+                </div>
                 <h3 id="2-1-2">Principes de codage</h3>
                 <h4 id="2-1-2-1">Format de la transmission</h4>
                 <p>Les données émises et reçues par le module modem (à destination ou en provenance du réseau vidéotex) ou par le module prise (à destination ou en provenance d'un périphérique) sont transmises en série sous la forme de "mots" de 8 bits ou octets comprenant 7 bits utiles plus un bit de parité paire. Ce bit de parité permet de détecter des erreurs de transmission ; il est notamment utilisé dans la procédure de correction d'erreur (<a href="#1-5">partie 1, chapitre 5</a>).</p>
@@ -2365,10 +2376,10 @@
                 <h5 id="2-2-1-1-3">Utilisation des attribut</h5>
                 <p>La structure d'utilisation des attributs varie selon le caractère choisi, dont on distingue 3 sortes : les caractères alphabétiques, les caractères semi-graphiques et les délimiteurs de zone.</p>
                 <p>Le tableau ci-après décrit cette structure.</p>
-                <table>
+                <table class="light-blue-header-darker-body">
                     <thead>
                         <tr>
-                            <th colspan="2" rowspan="2"></th>
+                            <th colspan="2" rowspan="2" style="visibility: hidden; border:none"></th>
                             <th colspan="3">Appartenance à un jeu</th>
                         </tr>
                         <tr>
@@ -2438,25 +2449,24 @@
                 <p>Les codes sont combinés, si nécessaire, sous forme de séquences conformément à la norme internationale ISO 2022 (NF Z 62-500).</p>
                 <!-- TODO add a note here for F/F - 0xFF notation -->
                 <p>Les codes sont désignés par deux chiffres (ou un chiffre et une lettre) séparés par une barre de fraction (exemple: A - 0x41). Le premier désigne la colonne et le second, la rangée du tableau utilisée. La notation correspond au système hexadécimal.</p>
-                <!-- TODO remove bold on first line of table -->
                 <table>
                     <tbody>
-                        <tr>
-                            <th>Notation décimale</th>
-                            <th>0</th>
-                            <th>1</th>
-                            <th>2</th>
-                            <th>3</th>
-                            <th>4</th>
-                            <th>5 .. 9</th>
-                            <th>10</th>
-                            <th>11</th>
-                            <th>12</th>
-                            <th>13</th>
-                            <th>14</th>
-                            <th>15</th>
+                        <tr class="light-blue">
+                            <td>Notation décimale</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5 .. 9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
                         </tr>
-                        <tr>
+                        <tr class="darker-blue">
                             <td>Notation héxadécimale</td>
                             <td>0</td>
                             <td>1</td>
@@ -2503,12 +2513,11 @@
                 </ul>
                 <p>Pour ce faire on définit un jeu auxiliaire de 94 caractères noté G2 où chaque caractère est codé de manière identique aux caractères de G0. Lorsque l'on désire désigner, non un caractère de G0, mais un caractère G2, on utilise une séquence composée du code de commande SS2 (0x19) et du code représentant le caractère choisi dans G2. Les accents sont contenus dans la colonne 4 du tableau G2. Ces caractères d'accentuation ne provoquent pas d'avance de position courante.</p>
                 <p><b>Exemple</b> : la lettre "é" sera codée par la séquence :</p>
-                <!-- TODO remove bold from table -->
                 <table>
                     <tr>
-                        <th>0x19</th>
-                        <th>0x42</th>
-                        <th>0x65</th>
+                        <td>0x19</td>
+                        <td>0x42</td>
+                        <td>0x65</td>
                     </tr>
                     <tr>
                         <td>(SS2)</td>
@@ -3025,7 +3034,7 @@
                 <h3 id="2-3-3">Liste des actions possibles grâce à la touche "Fnct"</h3>
                 <p>L'usager peut modifier l'état du terminal ou d'un module particulier, et activer le mécanisme de copie d'écran grâce à la touche "Fnct."</p>
                 <p>Les différentes commandes possibles figurent dans le tableau suivant :</p>
-                <table>
+                <table class="light-blue-header-darker-body">
                     <thead>
                         <tr>
                             <th rowspan="2">Commande</th>
@@ -3037,7 +3046,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="yellow">
                             <td>Clavier</td>
                             <td></td>
                             <td></td>
@@ -3062,7 +3071,7 @@
                             <td>Retour au clavier vidéotex standard</td>
                             <td>Retour au clavier vidéotex standard</td>
                         </tr>
-                        <tr>
+                        <tr class="yellow">
                             <td>Écran</td>
                             <td></td>
                             <td></td>
@@ -3077,7 +3086,7 @@
                             <td>Passage de l'écran en mode rouleau</td>
                             <td>Passage de l'écran en mode rouleau</td>
                         </tr>
-                        <tr>
+                        <tr class="yellow">
                             <td>Impression</td>
                             <td></td>
                             <td></td>
@@ -3092,7 +3101,7 @@
                             <td>Commande de copie d'écran vers la prise jeu français</td>
                             <td>Commande de copie d'écran vers la prise jeu français</td>
                         </tr>
-                        <tr>
+                        <tr class="yellow">
                             <td>Modem</td>
                             <td></td>
                             <td></td>
@@ -3107,7 +3116,7 @@
                             <td>Commande d'opposabilité au modem<br>Active en local uniquement</td>
                             <td>Commande d'opposabilité au modem<br>Active en local uniquement</td>
                         </tr>
-                        <tr>
+                        <tr class="yellow">
                             <td>Prise</td>
                             <td></td>
                             <td></td>
@@ -3132,7 +3141,7 @@
                             <td>Vitesse de la prise = 4800 bauds</td>
                             <td>Vitesse de la prise = 4800 bauds</td>
                         </tr>
-                        <tr>
+                        <tr class="yellow">
                             <td>Terminal</td>
                             <td></td>
                             <td></td>
@@ -3196,7 +3205,7 @@
                 <span class="pageNumber" id="p114">114</span>
                 <h4 id="2-3-5-1">Codes et séquences émis en mode Vidéotex</h4>
                 <h5 id="2-3-5-1-1">Code unique</h5>
-                <table id="table5-1-1">
+                <table id="table5-1-1" class="light-blue-header-darker-body">
                     <thead>
                         <tr>
                             <th>Code émis<br>(en Hexadécimal)</th>
@@ -3849,13 +3858,15 @@
                 </table>
                 <span class="pageNumber" id="p118">118</span>
                 <h5 id="2-3-5-1-2">Séquence de deux ou trois codes</h5>
-                <table>
-                    <tbody>
+                <table class="light-blue-header-darker-body">
+                    <thead>
                         <tr>
-                            <td>Code émis (en Héxadécimal)</td>
-                            <td>Caractère</td>
-                            <td>Touche ou séquence de touches</td>
+                            <th>Code émis (en Héxadécimal)</td>
+                            <th>Caractère</td>
+                            <th>Touche ou séquence de touches</td>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td>0x19 0x23</td>
                             <td>£</td>
@@ -3942,10 +3953,10 @@
                 <h4 id="2-3-5-2">Codes et séquences émis en mode Mixte</h4>
                 <p>Les touches de fonction émettent les séquences du standard Télétel figurant dans le tableau du <a href="#2-3-6">paragraphe 6</a>.</p>
                 <p>Les autres possibilités sont résumées dans les tableaux suivants.</p>
-                <table>
+                <table class="light-blue-header-darker-body">
                     <thead>
                         <tr>
-                            <th>Code émis<br /> (en Hexadécimal)</th>
+                            <th>Code émis (en Hexadécimal)</th>
                             <th colspan="2">Caractère</th>
                             <th>Touche ou combinaison de touches</th>
                         </tr>
@@ -4117,8 +4128,8 @@
                             <th rowspan="2">Touche ou combinaison de touches</th>
                         </tr>
                         <tr>
-                            <td>Jeu américain</td>
-                            <td>Jeu fran&ccedil;ais</td>
+                            <th>Jeu américain</th>
+                            <th>Jeu fran&ccedil;ais</th>
                         </tr>
                         <tr>
                             <td>0x20</td>
@@ -4726,13 +4737,15 @@
                 <span class="pageNumber" id="p123">123</span>
                 <h3 id="2-3-6">Séquences émises par les touches de fonction en mode Vidéotex ou Mixte ; compatibilityé PAD-X3</h3>
                 <p>Le tableau suivant représente les séquences émises par les touches de fonction que le terminal soit en mode Vidéotex ou en mode Mixte.</p>
-                <table>
-                    <tbody>
+                <table class="light-blue-header-darker-body">
+                    <thead>
                         <tr>
-                            <td>Touche</td>
-                            <td>État standard<br></td>
-                            <td>État compatible PAD-X3<br></td>
+                            <th>Touche</th>
+                            <th>État standard<br></th>
+                            <th>État compatible PAD-X3<br></th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td>Envoi</td>
                             <td>0x13 0x41</td>
@@ -4793,13 +4806,15 @@
                 * sauf pour les versions Bu0 et Bu1 de RTIC
                 <span class="pageNumber" id="p124">124</span>
                 <h3 id="2-3-7">Codes et séquences émis par les touches de gestion du curseur et d'édition en mode Vidéotex ou Mixte</h3>
-                <table>
-                    <tbody>
+                <table class="light-blue-header-darker-body">
+                    <thead>
                         <tr>
-                            <td>Touche ou combinaison de touches</td>
-                            <td>Mode Vidéotex standard ou mode Mixte</td>
-                            <td>Mode Vidéotex avec codage de type C0</td>
+                            <th>Touche ou combinaison de touches</th>
+                            <th>Mode Vidéotex standard ou mode Mixte</th>
+                            <th>Mode Vidéotex avec codage de type C0</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td>↑</td>
                             <td>0x1B 0x5B 0x41</td>
@@ -5035,13 +5050,15 @@
                 <p>Ce logiciel assure principalement l'aiguillage des données entre les modules ainsi que la mise en oeuvre de fonctionnements particuliers du terminal ou des modules à l'aide de commandes élémentaires constituant le langage Protocole.</p>
                 <p>Le langage Protocole, qui ne constitue pas à proprement parler des données, n'est pas soumis au mécanisme des aiguillages.</p>
                 <p>Pour assurer la mise en relation des modules, chacun d'eux dispose d'un code émission et d'un code réception. Ces codes, d'un octet chacun, interviennent dans le langage Protocole. Ils sont les suivants :</p>
-                <table>
-                    <tbody>
+                <table class="light-blue-header-darker-body">
+                    <thead>
                         <tr>
-                            <td>Module</td>
-                            <td>Codes émissions</td>
-                            <td>Codes réception</td>
+                            <th>Module</th>
+                            <th>Codes émissions</th>
+                            <th>Codes réception</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td>Écran</td>
                             <td>0x50</td>
@@ -5083,18 +5100,20 @@
                 <p>Cependant, le réseau vidéotex ou le périphérique peuvent engendrer des commandes d'aiguillage qui permettent, soit de relier un module émetteur avec un ou plusieurs modules récepteurs, soit de couper des liaisons existantes entre un module émetteur et un ou plusieurs modules récepteurs.</p>
                 <span class="pageNumber" id="135">135</span>
                 <p>Les interventions exécutables sur les aiguillages sont résumées dans le tableau suivant :</p>
-                <table>
+                <table class="light-blue-header-yellow-body green-first-column">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Module récepteur</th>
+                            <th colspan="4">Module émetteur</th>
+                        </tr>
+                        <tr>
+                            <th class="light-blue">Prise</th>
+                            <th>Modem</th>
+                            <th>Clavier</th>
+                            <th>Écran<br></th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <tr>
-                            <td rowspan="2">Module récepteur</td>
-                            <td colspan="4">Module émetteur</td>
-                        </tr>
-                        <tr>
-                            <td>Prise</td>
-                            <td>Modem</td>
-                            <td>Clavier</td>
-                            <td>Écran<br></td>
-                        </tr>
                         <tr>
                             <td>Prise</td>
                             <td>●</td>
@@ -5170,7 +5189,7 @@
                 <p>Le format de l'octet de status d'aiguillage est le suivant :</p>
                 <table>
                     <tbody>
-                        <tr>
+                        <tr class="light-blue">
                             <td>b7</td>
                             <td>b6</td>
                             <td>b5</td>
@@ -5248,7 +5267,7 @@
                     <li>réponse: PRO2, REP STATUS PROTOCOLE (0x77), octet de status Protocole.</li>
                 </ul>
                 <p>L'octet de status Protocole a la configuration suivante :</p>
-                <table>
+                <table class="light-blue">
                     <tbody>
                         <tr>
                             <td>P</td>
@@ -5373,7 +5392,7 @@
                 <h4 id="2-6-8-1">Format de la commande</h4>
                 Cette commande a pour format PRO2, PROG (0x6B), octet de programmation vitesse.
                 <p>L'octet de programmation vitesse a la configuration suivante :</p>
-                <table>
+                <table class="light-blue">
                     <tbody>
                         <tr>
                             <td>P</td>
@@ -5387,14 +5406,27 @@
                         </tr>
                     </tbody>
                 </table>
-                <!-- TODO get these in two columns -->
-                P : bit de parité        001 = 75 bauds
-                <br>
-                E : vitesse d'émission   010 = 300 bauds
-                <br>
-                R : vitesse de réception 100 = 1 200 bauds
-                <br>
-                                        110 = 4 800 bauds
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="noborder">P : bit de parité</td>
+                            <td class="noborder">001 = 75 bauds</td>
+                        </tr>
+                        <tr>
+                            <td class="noborder">E : vitesse d'émission</td>
+                            <td class="noborder">010 = 300 bauds</td>
+                        </tr>
+                        <tr>
+                            <td class="noborder">R : vitesse de réception</td>
+                            <td class="noborder">100 = 1 200 bauds</td>
+                        </tr>
+                        <tr>
+                            <td class="noborder"></td>
+                            <td class="noborder">110 = 4 800 bauds</td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <p>Le Minitel 1B ne dispose en version de base que des vitesses symétriques 300-300 bauds, 1200-1200 bauds, 4800-4800 bauds.</p>
                 <h4 id="2-6-8-2">Acquittement</h4>
                 <p>Le Protocole acqauitte cette commande par l'envoi vers le périphérique de la séquence : PRO2, REP STATUS VITESSE (0x75), octet de status vitesse.</p>
@@ -5434,7 +5466,7 @@
                 <p>Ces commandes sont acquittées par le Protocole vers le module initiateur par la séquence :</p>
                 PROG, REP STATUS CLAVIER (0x73), code récepteur clavier, octet de status fonctionnement clavier.
                 <p>L'octet de status fonctionnement clavier a la configuration suivante :</p>
-                <table>
+                <table class="light-blue">
                     <tbody>
                         <tr>
                             <td>P</td>
@@ -5506,7 +5538,7 @@
                 <h4 id="2-6-11-2">Acquittement</h4>
                 <p>Ces commandes sont acquittées par le Protocole par la séquence : PRO2, REP STATUS FONCTIONNEMENT (0x73), octet de status fonctionnement.</p>
                 <p>L'octet de status fonctionnement a la configuration suivante :</p>
-                <table>
+                <table class="light-blue">
                     <tbody>
                         <tr>
                             <td>P</td>
@@ -5665,7 +5697,7 @@
                     <li>réponse : PRO2, REP STATUS TERMINAL (0x71), octet de status terminal.</li>
                 </ul>
                 <p>L'octet de status terminal a pour configuration :</p>
-                <table>
+                <table class="light-blue">
                     <tbody>
                         <tr>
                             <td>P</td>
@@ -5715,7 +5747,7 @@
                     </li>
                 </ul>
                 <figure id="schema2-10">
-                    <table>
+                    <table class="light-blue-header-darker-body">
                         <thead>
                             <tr>
                                 <th></th>
@@ -5812,18 +5844,17 @@
                 <ul>
                     <li>
                         en réception du réseau vidéotex ou d'un périphérique, les séquences du type :
-                        <ul>
-                            <li>PRO3, FROM</li>
-                            <li>PRO2, REP STATUS TERMINAL</li>
-                            <li>PRO2, REP STATUS FONCTIONNEMENT</li>
-                            <li>PRO2, REP STATUS CLAVIER</li>
-                            <li>PRO2, REP STATUS VITESSE</li>
-                            <li>PRO2, REP STATUS PROTOCOLE</li>
-                            <li>PRO1, X</li>
-                            <!-- TODO get these in two columns ?! -->
-                            <li>PRO2, X, Y             pour les codes X, Y et Z non définis dans le</li>
-                            <li>PRO3, X, Y, Z          Protocole du Minitel 1B.</li>
-                        </ul>
+                        <table>
+                            <tr><td class="noborder">- PRO3, FROM</td><td class="noborder"></td></trc>
+                            <tr><td class="noborder">- PRO2, REP STATUS TERMINAL</td><td class="noborder"></td></trc>
+                            <tr><td class="noborder">- PRO2, REP STATUS FONCTIONNEMENT</td><td class="noborder"></td></trc>
+                            <tr><td class="noborder">- PRO2, REP STATUS CLAVIER</td><td class="noborder"></td></trc>
+                            <tr><td class="noborder">- PRO2, REP STATUS VITESSE</td><td class="noborder"></td></trc>
+                            <tr><td class="noborder">- PRO2, REP STATUS PROTOCOLE</td><td class="noborder"></td></trc>
+                            <tr><td class="noborder">- PRO1, X</td><td class="noborder"></td></trc>
+                            <tr><td class="noborder">- PRO2, X, Y</td><td class="noborder">pour les codes X, Y et Z non définis dans le</td></trc>
+                            <tr><td class="noborder">- PRO3, X, Y, Z</td><td class="noborder">Protocole du Minitel 1B.</td></trc>
+                        </table>
                     </li>
                     <li>
                         <p>en provenance du réseau vidéotex, la séquence de programmation de vitesse :</p>
@@ -6107,7 +6138,7 @@
                 <h5 id="3-2-4-2-3">Fonctions de commande de type ESC F<sub>s</sub></h5>
                 <p>Ce sont des séquences d'échappement à deux caractères, conformes à la norme ISO 2022, de la forme ESC F<sub>s</sub>, où F<sub>s</sub> est représenté par un caractère des colonnes 6 ou 7. Ces fonctions de commande ne font pas partie du jeu C1.</p>
                 <p>Le Minitel 1B interprète une séquence de ce type (<a href="#3-2-4-5">paragraphe 4.5</a>).</p>
-                <h4 id="3-2-4-2">Tableaux des codes de contrôle et des caractères visualisables</h4>
+                <h4 id="3-2-4-3">Tableaux des codes de contrôle et des caractères visualisables</h4>
                 <p>Les tableaux 1 et 2 représentent les 128 codes disponibles et indiquent pour les caractères visualisables (colonnes 2 à 7) les différentes représentations sur l'écran, suivant que le jeu américain ou le jeu français soit choisi.</p>
                 <span class="pageNumber" id="p163">163</span>
                 <figure id="#tableau1">
@@ -6127,14 +6158,14 @@
                     CSI Ps m (0x1B, 0x5B, 0x3X, 0x3Y, 0x6D) où Ps représente un paramètre sélectif désignant l'attribut choisi.
                 </p>
                 <p>Les valeurs des paramètres possibles exprimées dans le système décimal sont regroupées dans le tableau suivant :</p>
-                <table>
+                <table class="light-blue-header-darker-body">
                     <thead>
                         <tr>
                             <th>Valeur de Ps</th>
                             <th>Attribut</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="no-horizontal-lines">
                         <tr>
                             <td>0</td>
                             <td>aucun attribut</td>
@@ -6187,7 +6218,7 @@
                 <ul>
                     <li>
                         <b>Fonctions de mise en page codées par un caractère du jeu CO.</b>
-                        <table>
+                        <table class="light-blue-header-darker-body">
                             <thead>
                                 <tr>
                                     <th>Code de C0</th>
@@ -6225,7 +6256,7 @@
                     </li>
                     <li>
                         <b>Fonctions de mise en page codées par une séquence du jeu C1.</b>
-                        <table>
+                        <table class="light-blue-header-yellow-body">
                             <thead>
                                 <tr>
                                     <th>Séquence jeu C1</th>
@@ -6256,7 +6287,7 @@
                         <b>Fonctions de mise en page codées par une séquence de commande.</b>
                         <p class="remarque">Remarque</p>
                         Dans ce tableau qui suit en pages 167 et 168 Pn, Pr Pc sont des paramètres numériques ; Ps est un paramètre sélectif.
-                        <table>
+                        <table class="light-blue-header-yellow-body">
                             <thead>
                                 <tr>
                                     <th>Séquence de commande</th>
@@ -6382,7 +6413,7 @@
                 <ul>
                     <li>
                         Fonctions particulières codées par un caractère du jeu C0.
-                        <table>
+                        <table class="light-blue-header-yellow-body">
                             <thead>
                                 <tr>
                                     <th>Code de C0</th>
@@ -6430,7 +6461,7 @@
                         </table>
                     </li>
                     <li>Fonctions particulères codées par une séquence de commande.
-                        <table>
+                        <table class="light-blue-header-yellow-body">
                             <thead>
                                 <tr>
                                     <th>Séquence de commande</th>
@@ -6486,26 +6517,35 @@
                     <li>Il peut être bloqué et débloqué par des séquences CSI ;</li>
                     <li>Le codage des touches d'édition et de gestion du curseur est uniquement en CSI ;</li>
                     <li>
-                        Le codage des touches de fonction correspond au tableau du <a href="#3-2-2">paragraphe 2.2</a>. Seule la touche “Connexion/Fin” respecte le codage de l'état compatible PAD-X3 du standard Télétel :
+                        Le codage des touches de fonction correspond au tableau du <a href="#3-2-2">paragraphe 2.2</a>. Seule la touche "Connexion/Fin" respecte le codage de l'état compatible PAD-X3 du standard Télétel :
                         <ul>
                             <li>Connexion/Fin : ESC 0x29 0x84 0x0D (vers le modem en connecté uniquement)</li>
                             <li>TS Connexion/Fin : ESC 0x29 0x34 0x0D (vers la prise en local uniquement)</li>
                         </ul>
                     </li>
-                    <li>Associée à la touche “Ctrl” la touche “Connexion/Fin" permet l'émission du Break de façon identique au standard Télétel ;</li>
-                    <li>L'annulation d'une copie d'écran en cours est possible par appui sur la touche “Annulation.”</li>
+                    <li>Associée à la touche "Ctrl" la touche "Connexion/Fin" permet l'émission du Break de façon identique au standard Télétel ;</li>
+                    <li>L'annulation d'une copie d'écran en cours est possible par appui sur la touche "Annulation."</li>
                 </ul>
                 <h3 id="3-3-2">Tableaux représentant les codes et séquences émis par le clavier</h3>
                 <h4 id="3-3-2-1">Code unique</h4>
                 <p>Dans ces tableaux, la colonne au centre représente, soit le symbole visualisé sur l'écran en jeu américain ou en jeu français, soit le nom mnémonique dans le cas des caractères de contrôle.</p>
-                <!-- TODO prettify that -->
-                X : représente l'appui sur la touche sérigraphiée “X”
-                <br>
-                TS X : représente la combinaison de la touche spéciale avec la touche marquée “X"
-                <br>
-                Ctrl X : représente la combinaison de la touche marquée “Ctrl” avec la touche marquée “X"
-                <span class="pageNumber" id="p175">175</span>
                 <table>
+                    <tr>
+                        <td class="noborder right-align">X :</td>
+                        <td class="noborder">représente l'appui sur la touche sérigraphiée "X"</td>
+                    </tr>
+                    <tr>
+                        <td class="noborder right-align">TS X :</td>
+                        <td class="noborder">représente la combinaison de la touche spéciale avec la touche marquée "X"</td>
+                    </tr>
+                    <tr>
+                        <td class="noborder right-align">Ctrl X :</td>
+                        <td class="noborder">représente la combinaison de la touche marquée "Ctrl" avec la touche marquée "X."</td>
+                    </tr>
+                </table>
+
+                <span class="pageNumber" id="p175">175</span>
+                <table class="light-blue-header-darker-body">
                     <thead>
                         <tr>
                             <th>Code émis<br /> (en Hexadécimal)</th>
@@ -6680,8 +6720,8 @@
                             <th rowspan="2">Touche ou combinaison de touches</th>
                         </tr>
                         <tr>
-                            <td>Jeu américain</td>
-                            <td>Jeu fran&ccedil;ais</td>
+                            <td class="light-blue">Jeu américain</td>
+                            <td class="light-blue">Jeu fran&ccedil;ais</td>
                         </tr>
                         <tr>
                             <td>0x20</td>
@@ -7289,7 +7329,7 @@
                 </table>
                 <span class="pageNumber" id="p179">179</span>
                 <h4 id="3-3-2-2">Séquences émises par les touches de fonction et par la touche "Fnct" associée aux touches numériques</h4>
-                <table>
+                <table class="light-blue-header-darker-body">
                     <thead>
                         <tr>
                             <th>Touches ou combinaison de touches</th>
@@ -7362,12 +7402,14 @@
                 </table>
                 <span class="pageNumber" id="p180">180</span>
                 <h4 id="3-3-2-3">Codes et séquences émis par les touches d'édition</h4>
-                <table>
-                    <tbody>
+                <table class="light-blue-header-darker-body">
+                    <thead>
                         <tr>
-                            <td>Touche ou combinaison de touches</td>
-                            <td>Code et séquence</td>
+                            <th>Touche ou combinaison de touches</th>
+                            <th>Code et séquence</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td>↑</td>
                             <td>0x1B 0x5B 0x41</td>
@@ -7423,7 +7465,7 @@
                 </table>
                 <span class="pageNumber" id="p181">181</span>
                 <h4 id="3-3-2-4">Liste des actions possibles grâce à la touche "Fnct"</h4>
-                <table>
+                <table class="light-blue-header-darker-body">
                     <thead>
                         <tr>
                             <th>Commande</th>
@@ -7431,7 +7473,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="yellow">
                             <td>Clavier</td>
                             <td></td>
                         </tr>
@@ -7439,6 +7481,7 @@
                             <td>Fnct C + M</td>
                             <td>Inversion minuscules/majuscules (flip-flop)</td>
                         </tr>
+                        <tr class="yellow">
                             <td>Écran</td>
                             <td></td>
                         </tr>
@@ -7454,7 +7497,7 @@
                             <td>Fnct E + R</td>
                             <td>Passage de l'écran en mode rouleau</td>
                         </tr>
-                        <tr>
+                        <tr class="yellow">
                             <td>Impression</td>
                             <td></td>
                         </tr>
@@ -7466,7 +7509,7 @@
                             <td>Fnct I + F</td>
                             <td>Commande de copie d'écran vers la prise jeu français</td>
                         </tr>
-                        <tr>
+                        <tr class="yellow">
                             <td>Modem</td>
                             <td></td>
                         </tr>
@@ -7474,7 +7517,7 @@
                             <td>Fnct M + R</td>
                             <td>Commande d'opposabilité au modem active en local uniquement</td>
                         </tr>
-                        <tr>
+                        <tr class="yellow">
                             <td>Prise</td>
                             <td></td>
                         </tr>
@@ -7494,7 +7537,7 @@
                             <td>Fnct P + 4</td>
                             <td>Vitesse de la prise = 4800 bauds</td>
                         </tr>
-                        <tr>
+                        <tr class="yellow">
                             <td>Terminal</td>
                             <td></td>
                         </tr>
@@ -7533,8 +7576,8 @@
                     <li>la détection de l'IAI.</li>
                 </ul>
                 <h3 id="3-4-2">La fonction modem</h3>
-                <p>La connexion ne peut s'effectuer que par l'action de l'utilisateur sur la touche “Connexion/Fin."</p>
-                <p>La déconnexion intervient sur perte de porteuse supérieure à 440ms ± 10ms ou par l'enfoncement 2 fois consécutivement de la touche “Connexion/Fin."</p>
+                <p>La connexion ne peut s'effectuer que par l'action de l'utilisateur sur la touche "Connexion/Fin."</p>
+                <p>La déconnexion intervient sur perte de porteuse supérieure à 440ms ± 10ms ou par l'enfoncement 2 fois consécutivement de la touche "Connexion/Fin."</p>
                 <p>
                     La vitesse des échanges peut correspondre à l'état standard ou à l'état retourné mais le retournement doit être effectué en standard Télétel. L'utilisateur peut néanmoins, en standard Téléinformatique et en local, commander le passage dans l'état opposé à la connexion grâce à la commande :
                     Fnct M + R
@@ -7558,7 +7601,7 @@
             </div>
             <h2 class="uncounted" id="4">Annexes</h2>
             <h4 class="uncounted" id="4-1">ANNEXE 1 - Identification des différents types de Minitel</h4>
-            <table>
+            <table class="light-blue-header-darker-body">
                 <thead>
                     <tr>
                         <th>Version logicielle</th>
@@ -7714,7 +7757,7 @@
             <br>
             <b>Réseau Minitel :</b>
             <br>
-            Ensemble de plusieurs périphériques reliés en chaîne et respectant les spécifications du “Système d'échanges” décrit dans les STURM.
+            Ensemble de plusieurs périphériques reliés en chaîne et respectant les spécifications du "Système d'échanges" décrit dans les STURM.
             <br>
             <br>
             <b>Système d'Échanges :</b>
