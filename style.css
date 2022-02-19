@@ -1,5 +1,6 @@
 body {
     font-family: Arial;
+    counter-reset: partie;
 }
 
 .part1 {
