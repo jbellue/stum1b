@@ -210,3 +210,12 @@ tbody.no-horizontal-lines td {
 tbody.no-horizontal-lines tr:last-of-type {
     border-bottom: 1px solid;
 }
+
+.diagonal-cell {
+    background: linear-gradient(to top right,#93e3ff 49%,#000 49.5%,#000 50.5%,#1eb7e8 51%);
+}
+
+.diagonal-cell-topRight {
+    text-align: right;
+    display: block;
+}
