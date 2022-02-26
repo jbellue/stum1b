@@ -1377,7 +1377,7 @@
                 <p>Les échanges entre le Minitel et le point d'accès vidéotex se font par caractères de 7 bits d'information plus un bit de parité paire encadrés d'un bit "Start" et d'un bit "Stop" au niveau du coupleur. La transmission d'un caractère s'effectue en commençant par les bits de poids faible.</p>
                 <p>L'opération de codage au niveau du point d'accès vidéotex consiste à regrouper ces octets par bloc de 15 et d'y adjoindre un octet de contrôle de redondance cyclique (CRC) et un octet de validation ; ce dernier permettant de détecter rapidement les pertes de synchronisation caractère.</p>
                 <figure>
-                    <img src="img/p56/1.png">
+                    <img src="img/p56/1.svg">
                 </figure>
                 <h5 id="1-5-5-1-3">Formation des octets 16 (CRC) et 17 (validation)</h5>
                 <p>L'octet 16 de CRC est formé à partir du reste de la division algébrique des caractères d'un bloc par une expression appelée polynôme générateur.</p>
@@ -1386,14 +1386,14 @@
                     <li>
                         les octets 1 à 15 d'un bloc forment une suite de bits qui sont considérés comme les coefficients d'un polynôme de degré 119 ;
                         <figure>
-                            <img src="img/p56/2.png">
+                            <img src="img/p56/2.svg">
                         </figure>
                     </li>
                     <li>
                         ce polynôme est multiplié par x⁷ pour donner un nouveau polynôme M(x) de degré 126, ayant pour coefficient de rang 126 à 7, les bits des octets 1 à 15 et des zéros pour coefficients des rangs 6 à O ;
                         <span class="pageNumber" id="p57">57</span>
                         <figure>
-                            <img src="img/p57/1.png">
+                            <img src="img/p57/1.svg">
                         </figure>
                     </li>
                     <li>
@@ -1402,7 +1402,7 @@
                     <li>
                         l'octet 16 de CRC est alors formé en donnant comme nouvelle valeur aux bits O à 6 les coefficients de rang O à 6 du polynôme R(X) ; le bit 7 étant le bit de parité calculé à partir des bits O à 6 ;
                         <figure>
-                            <img src="img/p57/2.png">
+                            <img src="img/p57/2.svg">
                         </figure>
                     </li>
                     <li>la suite formée par les bits des octets 1 à 15 et les bits 6 à 0 de l'octet 16 correspond alors numériquement aux coefficients d'un polynôme T(x) de degré 126 parfaitement divisible par le polynôme générateur G(x) selon le procédé modulo 2 ;</li>
