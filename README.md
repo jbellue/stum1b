@@ -1,4 +1,5 @@
 # STUM1B
+
 ## Spéfications Techniques d'Utilisation du Minitel 1B
 
 I got sick of not being able to search through the docs, so I OCR'ed it. But then, what's the point of having it in a PDF, when it could be actual text?
@@ -18,5 +19,4 @@ Is anyone ever going to see it? Probably not. But it's there anyway. Hopefully s
 ### what is left to do
 
 - I'd like the tables to look more like the original ones, it would look prettier. Just some CSS, and that would be done.
-- Optimize/cleanup (maybe redraw?) the images
 - Add all the weird bar characters (SVG? pure CSS? PNG?)
