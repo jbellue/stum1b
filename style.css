@@ -124,6 +124,7 @@ ul > li > ul > li::before {
     width: 30%;
     height: 100vh;
     top: 0;
+    overflow-y: auto;
 }
 
 #content {
