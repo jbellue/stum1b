@@ -1191,7 +1191,7 @@
                 <p>Dans les paragraphes 3, 4 et 5 qui suivent, les commandes Protocole ou les séquences d'acquittement citées correspondent au cas où le Minitel est en standard Télétel. Ces séquences peuvent être différentes si la compatibilité PAD-X3 a été programmée par l'utilisateur ou si le Minitel est en standard Téléinformatique.</p>
                 <!-- TODO add a note about the hex notation -->
                 <p>
-                    Les caractères notés sous forme de deux chiffres séparés par une barre de fraction représentent les valeurs hexadécimales de ces caractères (<a href="#2-2-1-2-1">partie 2, chapitre 2, paragraphe 1.2.1</a>). Le caractère SEP correspond au code 0x13. Les séquences commençant par PRO, PRO2 et PRO3 sont des séquences du langage Protocole définies en <a href="#2-6">partie 2, chapitre 6</a>.</p>
+                    Les caractères notés sous forme de deux chiffres séparés par une barre de fraction représentent les valeurs hexadécimales de ces caractères (<a href="#2-2-1-2-1">partie 2, chapitre 2, paragraphe 1.2.1</a>). Le caractère SEP correspond au code 0x13. Les séquences commençant par PRO1, PRO2 et PRO3 sont des séquences du langage Protocole définies en <a href="#2-6">partie 2, chapitre 6</a>.</p>
                 <span class="pageNumber" id="p49">49</span>
                 <h3 id="1-5-3">Connexion-Déconnexion</h3>
                 <p>La connexion du modem peut se réaliser en mode standard ou en mode dit opposé :</p>
@@ -1240,7 +1240,7 @@
                 <p>En cas d'échec de la phase de connexion automatique ou d'annulation par l'usager, le Minitel envoie SEP 0x59 vers la prise si le terminal est en standard Télétel, conserve l'état local courant et réinitialise les files d'attente du modem.</p>
                 <p>Si le terminal est en standard Téléinformatique, aucune séquence n'est émise vers la prise.</p>
                 <h5 id="1-5-3-1-2">Connexion en mode opposé</h5>
-                <p>Lorsque le Minitel doit émettre des données à 1200 bauds et recevoir des données à 75 bauds à la connexion, il est nécessaire de le mettre, avant de se connecter, dans l'état dit opposé. Ceci est réalisé en local par l'usager, grâce à la commande Fnct M + R, ou par le périphérique lorsque le terminal est en standard Télétel grâce à la commande Protocole PRO, OPPO. Dès réception de l'une de ces commandes la lettre "F" en rangée 00 devient "f" visualisée en noir sur fond blanc lorsque le terminal est en standard Télétel mode Vidéotex, et en blanc sur fond noir dans les autres cas. Au passage dans l'état opposé, il y a émission de la séquence SEP 0x50 vers la prise et mise à jour du bit EC (état à la connexion) du status terminal, lorsque le Minitel est en standard Télétel. Aucune séquence n'est émise vers la prise en standard Téléinformatique.</p>
+                <p>Lorsque le Minitel doit émettre des données à 1200 bauds et recevoir des données à 75 bauds à la connexion, il est nécessaire de le mettre, avant de se connecter, dans l'état dit opposé. Ceci est réalisé en local par l'usager, grâce à la commande Fnct M + R, ou par le périphérique lorsque le terminal est en standard Télétel grâce à la commande Protocole PRO1, OPPO. Dès réception de l'une de ces commandes la lettre "F" en rangée 00 devient "f" visualisée en noir sur fond blanc lorsque le terminal est en standard Télétel mode Vidéotex, et en blanc sur fond noir dans les autres cas. Au passage dans l'état opposé, il y a émission de la séquence SEP 0x50 vers la prise et mise à jour du bit EC (état à la connexion) du status terminal, lorsque le Minitel est en standard Télétel. Aucune séquence n'est émise vers la prise en standard Téléinformatique.</p>
                 <p>Lors de la connexion du modem sur la ligne téléphonique par la touche "Connexion/Fin" ou la séquence PRO1, CONNEXION reçue du périphérique, le Minitel envoie la séquence SEP 0x59 vers la prise (en standard Télétel uniquement), commande l'affichage d'un "C" (clignotant en standard Télétel mode Vidéotex) à la place du "f" en rangée 00. Il engendre l'émission continue d'un signal 1300 Hz pendant 40s. Le Minitel passe dans l'état connecté opposé s'il repère durant la phase d'émission du signal 1300 Hz, un signal continu à 390 Hz pendant au moins 3s. Au passage dans l'état connecté opposé, le logiciel réalise les aiguillages standard de l'état connecté, affiche un "C" fixe en rangée 00, réinitialise la file émission du modem et envoie la séquence SEP 0x53 vers la prise (en standard Télétel uniquement).</p>
                 <p>En cas d'échec de la phase de connexion, le Minitel envoie la séquence SEP 0x59 vers la prise (en standard Télétel uniquement), affiche un "F" en rangée 00 et repasse dans l'état standard local. Le mode opposé est annulé. Le bit EC du status terminal est mis à jour si le Minitel est en standard Télétel.</p>
                 <p class="remarque">Remarque</p>
@@ -1250,7 +1250,7 @@
                 <p>L'opération de déconnexion est réalisée dans quatre cas :</p>
                 <ul>
                     <li>lorsque l'utilisateur le demande en appuyant deux fois consécutivement sur la touche "Connexion/Fin" ;</li>
-                    <li>lorsque le réseau vidéotex ou le périphérique envoie la commande Protocole de déconnexion PRO, DECONNEXION (en standard Télétel uniquement) ;</li>
+                    <li>lorsque le réseau vidéotex ou le périphérique envoie la commande Protocole de déconnexion PRO1, DECONNEXION (en standard Télétel uniquement) ;</li>
                     <li>lorsqu'il y a perte de porteuse supérieure à 440 ms ±10 ms quel que soit le niveau de réception et l'état standard ou retourné du modem. Si la perte de porteuse est inférieure à cette durée, il n'y pas de caractère parasite visualisé ;</li>
                     <li>lorsque l'utilisateur coupe l'alimentation du Minitel et donc du module modem.</li>
                 </ul>
@@ -1273,8 +1273,8 @@
                 <p>Avant de commander tout retournement, l'équipement initiateur (réseau vidéotex ou périphérique) doit s'assurer qu'il n'y a plus d'échange d'informations de niveau supérieur.</p>
                 <h5 id="1-5-4-1-2">Fonctionnement du Minitel en esclave (ou état retourné)</h5>
                 <p>Dès la détection d'une perte de porteuse 75 bauds, le Minitel initialise la temporisation de déconnexion de 440ms ±10ms (T6). Si cette disparition de porteuse se poursuit pendant un temps continu de 20ms (T1), il effectue le changement de mode du modem avec émission de la porteuse inverse et avertit le périphérique par l'envoi de la séquence SEP 0x58 vers la prise ; les files d'attente ne sont pas altérées et une éventuelle liaison module prise vers module écran reste opérationnelle. Les changements d'aiguillages et de modes de fonctionnement restent possibles par un périphérique.</p>
-                <p>Puis dans une fenêtre de 220ms (T2), le terminal recherche la présence d'une porteuse continue à 1200 bauds pendant 40ms (T3). Durant cette phase T3, l'émission modem est bloquée ; les éventuels caractères reçus sur le modem sont perdus, à l'exception de la séquence PRO, ACRET qui sera traitée à la fin du temps T3. Après validation de la présence porteuse, le logiciel positionne dans le status terminal, le bit de vitesse modem et autorise l'émission et la réception ; la temporisation de déconnexion est réinitialisée.</p>
-                <p>La réception de la séquence PRO, ACRET ou l'échéance d'une temporisation de 90ms (T4), indique que le processus de retournement est réussi. Le Minitel envoie alors la séquence SEP 0x51 vers la prise et le modem.</p>
+                <p>Puis dans une fenêtre de 220ms (T2), le terminal recherche la présence d'une porteuse continue à 1200 bauds pendant 40ms (T3). Durant cette phase T3, l'émission modem est bloquée ; les éventuels caractères reçus sur le modem sont perdus, à l'exception de la séquence PRO1, ACRET qui sera traitée à la fin du temps T3. Après validation de la présence porteuse, le logiciel positionne dans le status terminal, le bit de vitesse modem et autorise l'émission et la réception ; la temporisation de déconnexion est réinitialisée.</p>
+                <p>La réception de la séquence PRO1, ACRET ou l'échéance d'une temporisation de 90ms (T4), indique que le processus de retournement est réussi. Le Minitel envoie alors la séquence SEP 0x51 vers la prise et le modem.</p>
                 <p>Si, au bout du temps T2, le terminal n'a pas détecté de porteuse 1200 bauds continue pendant le temps T3, il effectue un retournement inverse avec émission de sa porteuse 1200 bauds et avertit le périphérique par l'envoi de la séquence SEP 0x58 vers la prise ; le logiciel recherche alors la présence d'une porteuse continue à 75 bauds pendant un temps de durée égale à T3. Après validation de cette présence de porteuse, l'émission et la réception modem sont autorisées et les échanges reprennent normalement ; dans ces conditions, la coupure porteuse 75 bauds était intempestive. Si le Minitel ne peut repérer une porteuse stable avant échéance du temps T6, il y a déconnexion et envoi vers la prise des séquences SEP 0x59 et SEP 0x58.</p>
                 <p>Il y a donc 3 cas lorsque le terminal est esclave. Le périphérique et le réseau vidéotex reçoivent, pour chaque cas, une suite de séquences différentes :</p>
                 <ul>
@@ -1285,7 +1285,7 @@
                 <p class="remarque">Remarque</p>
                 <p>Le périphérique du Minitel ne doit émettre vers le modem, après retournement, que s'il a reçu SEP 0x51 (cas 1) ou 2 fois SEP 0x58 (cas 2).</p>
                 <h5 id="1-5-4-1-3">Fonctionnement du Minitel en maître (ou état standard)</h5>
-                <p>Dès réception de la commande PRO, RET1 en provenance du réseau vidéotex, le Minitel effectue un retournement : il émet sa porteuse à 1200 bauds, envoie SEP 0x58 vers la prise puis recherche l'apparition d'une porteuse 75 bauds pendant 40ms à l'intérieur d'une fenêtre de 440ms ±10ms initialisée à <span class="pageNumber" id="p53">53</span>l'instant du retournement. Pendant toute cette phase, le logiciel réalise le blocage de l'émission et de la réception du modem. Après confirmation pendant 40ms de la présence d'une porteuse à 75 bauds, le Minitel envoie la séquence d'acquittement SEP 0x51 vers la prise et le modem. Cet acquittement permet d'accélérer le processus de retournement de l'esclave avant l'échéance de la temporisation T4 définie au paragraphe précédent.</p>
+                <p>Dès réception de la commande PRO1, RET1 en provenance du réseau vidéotex, le Minitel effectue un retournement : il émet sa porteuse à 1200 bauds, envoie SEP 0x58 vers la prise puis recherche l'apparition d'une porteuse 75 bauds pendant 40ms à l'intérieur d'une fenêtre de 440ms ±10ms initialisée à <span class="pageNumber" id="p53">53</span>l'instant du retournement. Pendant toute cette phase, le logiciel réalise le blocage de l'émission et de la réception du modem. Après confirmation pendant 40ms de la présence d'une porteuse à 75 bauds, le Minitel envoie la séquence d'acquittement SEP 0x51 vers la prise et le modem. Cet acquittement permet d'accélérer le processus de retournement de l'esclave avant l'échéance de la temporisation T4 définie au paragraphe précédent.</p>
                 <p>Si, à la fin de la fenêtre de 440ms ±10ms, il n'y a pas eu confirmation d'une présence de porteuse 75 bauds, il y a déconnexion et le terminal envoie la séquence SEP 0x59 suivi de SEP 0x53 vers la prise.</p>
                 <p>Il y a donc deux cas lorsque le terminal est maître :</p>
                 <ul>
@@ -1300,28 +1300,28 @@
                 <h4 id="1-5-4-2">Mise en oeuvre du retournement</h4>
                 <p>Le retournement peut être commandé soit par le réseau vidéotex, par un serveur ou soit par un périphérique grâce à l'émission de deux séquences Protocole :</p>
                 <ul>
-                    <li>PRO, RET1: commande de retournement du modem du terminal pour qu'il émette à 1200 bauds et reçoive à 75 bauds ;</li>
-                    <li>PRO, RET2: commande de retournement inverse.</li>
+                    <li>PRO1, RET1: commande de retournement du modem du terminal pour qu'il émette à 1200 bauds et reçoive à 75 bauds ;</li>
+                    <li>PRO1, RET2: commande de retournement inverse.</li>
                 </ul>
-                <p>Le terminal filtre PRO, RET1 quand il émet à 1200 bauds et PRO, RET2 quand il émet à 75 bauds.</p>
+                <p>Le terminal filtre PRO1, RET1 quand il émet à 1200 bauds et PRO1, RET2 quand il émet à 75 bauds.</p>
                 <h5 id="1-5-4-2-1">Retournement initialisé par le réseau vidéotex</h5>
                 <ul>
                     <li>
                         <b>Le Minitel émet à 75 bauds (état standard)</b>
-                        <p>Le réseau vidéotex engendre la commande PRO, RET1 vers le Minitel. Le Protocole du Minitel, sur réception de celle-ci, initialise le processus de retournement en effectuant le changement de vitesse du modem ; l'équipement distant détecte alors une coupure de porteuse 75 bauds, conséquence du retournement physique du modem du Minitel, correspondant à l'acquittement de la commande PRO, RET1. La fin de ce processus sera repérée par le réseau vidéotex lorsqu'il recevra la séquence SEP 0x51 émise à 1200 bauds par le terminal.</p>
+                        <p>Le réseau vidéotex engendre la commande PRO1, RET1 vers le Minitel. Le Protocole du Minitel, sur réception de celle-ci, initialise le processus de retournement en effectuant le changement de vitesse du modem ; l'équipement distant détecte alors une coupure de porteuse 75 bauds, conséquence du retournement physique du modem du Minitel, correspondant à l'acquittement de la commande PRO1, RET1. La fin de ce processus sera repérée par le réseau vidéotex lorsqu'il recevra la séquence SEP 0x51 émise à 1200 bauds par le terminal.</p>
                     </li>
                     <li>
                         <b>Le Minitel émet à 1200 bauds (état retourné)</b>
                         <p>Le réseau vidéotex initialise directement le processus en effectuant le changement de vitesse de son modem. Il recherche alors la présence d'une porteuse 75 bauds en provenance du Minitel.</p>
-                        <p>Après validation de la porteuse, la fin du retournement du réseau vidéotex peut être signalée par l'envoi, vers le Minitel, de la séquence d'acquittement PRO, ACRET; le terminal sur réception de celle-ci envoie l'acquittement SEP 0x51 vers les modules modem et prise.</p>
+                        <p>Après validation de la porteuse, la fin du retournement du réseau vidéotex peut être signalée par l'envoi, vers le Minitel, de la séquence d'acquittement PRO1, ACRET; le terminal sur réception de celle-ci envoie l'acquittement SEP 0x51 vers les modules modem et prise.</p>
                     </li>
                 </ul>
                 <p class="remarque">Remarque</p>
                 <ul>
-                    <li>Lorsque la procédure de correction d'erreur est active, la dernière information utile avant d'engager le processus de retournement doit être la commande de retournement PRO, RET1. Le bloc de la procédure de correction d'erreur contenant cette commande est éventuellement complété par des caractères NUL.</li>
+                    <li>Lorsque la procédure de correction d'erreur est active, la dernière information utile avant d'engager le processus de retournement doit être la commande de retournement PRO1, RET1. Le bloc de la procédure de correction d'erreur contenant cette commande est éventuellement complété par des caractères NUL.</li>
                     <li>Le passage du Minitel de l'état standard à l'état retourné arrête automatiquement la procédure de correction d'erreur mais le bit PC dans l'octet de status fonctionnement est inchangé.</li>
                     <span class="pageNumber" id="p54">54</span>
-                    <li>Si la procédure de correction d'erreur était activée lors du passage de l'état standard à l'état retourné, elle est alors automatiquement réinitialisée lors du retour à l'état standard sans besoin d'aucune séquence Protocole de mise en route ; l'acquittement du retournement PRO, ACRET constitue les premiers octets utiles du bloc 00 de la procédure de correction d'erreur.</li>
+                    <li>Si la procédure de correction d'erreur était activée lors du passage de l'état standard à l'état retourné, elle est alors automatiquement réinitialisée lors du retour à l'état standard sans besoin d'aucune séquence Protocole de mise en route ; l'acquittement du retournement PRO1, ACRET constitue les premiers octets utiles du bloc 00 de la procédure de correction d'erreur.</li>
                     <li>Dans l'état retourné, les séquences de mise en marche ou d'arrêt de la procédure sont prises en compte, et un acquittement est renvoyé ; cependant, le traitement effectif de ces commandes ne sera réalisé que lors du retour à l'état standard.</li>
                     <li>Dans tous les cas, une commande ou une demande d'un retournement déjà effectué ne provoque aucune action.</li>
                 </ul>
@@ -1329,17 +1329,17 @@
                 <ul>
                     <li>
                         <b>Le Minitel émet à 75 bauds (état standard)</b>
-                        <p>Le périphérique engendre la commande PRO, RET1 : si le terminal au cours de la session s'est déjà retourné, le Protocole du Minitel initialise immédiatement le processus de retournement en effectuant le changement de vitesse du modem ; dans le cas contraire, il transmet vers le réseau vidéotex la séquence SEP 0x4C pour lui demander de commander le retournement.</p>
-                        <p>L'équipement distant, sur réception de cette séquence, transmet, si celui-ci est retournable, la commande PRO, RET1 au Minitel ; le Protocole du terminal initialise alors le processus de retournement.</p>
-                        <p>Le périphérique est averti de la prise en compte de la commande PRO, RET1 par réception de la séquence SEP 0x58 émise par le Minitel au moment du changement de vitesse du modem. À la fin du processus, le Protocole engendre l'acquittement SEP 0x51 vers les modules modem et prise. En cas d'échec (déconnexion) le périphérique est averti par les séquences jointives SEP 0x59, SEP 0x53.</p>
+                        <p>Le périphérique engendre la commande PRO1, RET1 : si le terminal au cours de la session s'est déjà retourné, le Protocole du Minitel initialise immédiatement le processus de retournement en effectuant le changement de vitesse du modem ; dans le cas contraire, il transmet vers le réseau vidéotex la séquence SEP 0x4C pour lui demander de commander le retournement.</p>
+                        <p>L'équipement distant, sur réception de cette séquence, transmet, si celui-ci est retournable, la commande PRO1, RET1 au Minitel ; le Protocole du terminal initialise alors le processus de retournement.</p>
+                        <p>Le périphérique est averti de la prise en compte de la commande PRO1, RET1 par réception de la séquence SEP 0x58 émise par le Minitel au moment du changement de vitesse du modem. À la fin du processus, le Protocole engendre l'acquittement SEP 0x51 vers les modules modem et prise. En cas d'échec (déconnexion) le périphérique est averti par les séquences jointives SEP 0x59, SEP 0x53.</p>
                     </li>
                     <li>
                         <b>Le Minitel émet à 1200 bauds (état retourné)</b>
-                        <p>Le périphérique engendre la commande PRO, RET2 : le Protocole du Minitel transforme celle-ci et émet la séquence SEP 0x4D vers le réseau vidéotex : c'est une demande d'initialisation du processus de retournement en effectuant systématiquement le changement de vitesse du modem. Comme précédemment, cette séquence n'est pas acquittée et le périphérique doit être en attente des séquences SEP 0x58, et SEP 0x51 lorsque le retournement a été effectué ou SEP 0x58, suivi de SEP 0x59 et SEP 0x53 lorsque le retournement s'est mal effectué et qu'il y a eu déconnexion.</p>
+                        <p>Le périphérique engendre la commande PRO1, RET2 : le Protocole du Minitel transforme celle-ci et émet la séquence SEP 0x4D vers le réseau vidéotex : c'est une demande d'initialisation du processus de retournement en effectuant systématiquement le changement de vitesse du modem. Comme précédemment, cette séquence n'est pas acquittée et le périphérique doit être en attente des séquences SEP 0x58, et SEP 0x51 lorsque le retournement a été effectué ou SEP 0x58, suivi de SEP 0x59 et SEP 0x53 lorsque le retournement s'est mal effectué et qu'il y a eu déconnexion.</p>
                         <p class="remarque">Remarques</p>
                         <ul>
                             <li>
-                                <p>Après émission des commandes PRO, RET1 et PRO, RET2, le périphérique n'est pas autorisé à engendrer des informations destinées à être transmises vers le réseau vidéotex; il doit attendre les acquittements SEP 0x58 et SEP 0x51 afin de reprendre la transmission.</p>
+                                <p>Après émission des commandes PRO1, RET1 et PRO1, RET2, le périphérique n'est pas autorisé à engendrer des informations destinées à être transmises vers le réseau vidéotex; il doit attendre les acquittements SEP 0x58 et SEP 0x51 afin de reprendre la transmission.</p>
                                 <p>Cependant, il lui est possible de modifier la configuration interne du Minitel (aiguillages par exemple) pendant toute la durée du processus de retournement.</p>
                             </li>
                             <li>
@@ -1350,7 +1350,7 @@
                 </ul>
                 <h4 id="1-5-4-3">Retournement pour l'opposabilité de deux Minitel</h4>
                 <p>Ce mode de retournement particulier permet de mettre en relation directe deux Minitel.</p>
-                <p>Le Minitel étant dans l'état local, le retournement est initialisé par un périphérique grâce à l'envoi de la séquence Protocole PRO, OPPO. À la réception de cette séquence le terminal positionne à 1 le bit EC du status terminal et envoie la séquence SEP 0x50 à la prise.</p>
+                <p>Le Minitel étant dans l'état local, le retournement est initialisé par un périphérique grâce à l'envoi de la séquence Protocole PRO1, OPPO. À la réception de cette séquence le terminal positionne à 1 le bit EC du status terminal et envoie la séquence SEP 0x50 à la prise.</p>
                 <p>Puis, sur commande de connexion soit par l'usager soit par la prise, le logiciel <span class="pageNumber" id="p55">55</span> fait basculer le relais et engage le processus de connexion en mode opposé décrit au <a href="#1-5-3-1-2">paragraphe 3.1.2</a>. Dans l'état opposé, le terminal n'est pas retournable ; une seconde commande PRO2, OPPORE reçue du réseau vidéotex ou du périphérique après la connexion permet de le rendre retournable.</p>
                 <p>Dès la déconnexion, sur commande extérieure ou perte de la porteuse 75 bauds supérieure à 440ms ±10ms, le terminal passe dans l'état local standard et le bit EC du status terminal est mis à zéro. Le mode opposé est annulé.</p>
                 <h3 id="1-5-5">Procédure de correction d'erreur</h3>
@@ -2966,7 +2966,7 @@
                 <p>En mode Vidéotex, le clavier est dans un état dit standard dans les cas suivants :</p>
                 <ul>
                     <li>à la mise sous tension du terminal ;</li>
-                    <li>après réception de la séquence Protocole PRO, RESET ;</li>
+                    <li>après réception de la séquence Protocole PRO1, RESET ;</li>
                     <li>lors du passage du mode Mixte au mode Vidéotex ou du standard Téléinformatique au standard Téletel ;</li>
                     <li>après la commande Fnct C + V réalisée par l'usager.</li>
                 </ul>
@@ -4892,12 +4892,12 @@
                     <li>la détection de l'IAI.</li>
                 </ul>
                 <h3 id="2-4-2">La fonction modem</h3>
-                <p>La connexion du modem à la ligne téléphonique par l'usager ou grâce à la séquence PRO, CONNEXION émise par un périphérique provoque l'émission de la séquence SEP 0x59 vers la prise.</p>
+                <p>La connexion du modem à la ligne téléphonique par l'usager ou grâce à la séquence PRO1, CONNEXION émise par un périphérique provoque l'émission de la séquence SEP 0x59 vers la prise.</p>
                 <p>La connexion confirmée entraîne l'émission de la séquence SEP 0x53 vers le modem et la prise (sinon une seconde séquence SEP 0x59 est émise vers la prise).</p>
-                <p>La déconnexion entraîne l'émission des séquences SEP 0x59 et SEP 0x53 vers la prise. Elle est provoquée par l'usager, la réception de la séquence Protocole PRO, DECONNEXION par la prise ou le modem, ou par une coupure de porteuse supérieure à 440ms ± 10ms.</p>
+                <p>La déconnexion entraîne l'émission des séquences SEP 0x59 et SEP 0x53 vers la prise. Elle est provoquée par l'usager, la réception de la séquence Protocole PRO1, DECONNEXION par la prise ou le modem, ou par une coupure de porteuse supérieure à 440ms ± 10ms.</p>
                 <p>La présence d'une porteuse correspond à l'état 1 du bit DP du status terminal (<a href="2-6">partie 2, chapitre 6</a>).</p>
                 <h3 id="2-4-3">Le retournement</h3>
-                <p>Le retournement est commandé par une séquence Protocole PRO, RET1 reçue par le Minitel à 1200 bauds, ou par une coupure de porteuse lorsqu'il reçoit à 75 bauds (ou par la séquence Protocole PRO, RET2).</p>
+                <p>Le retournement est commandé par une séquence Protocole PRO1, RET1 reçue par le Minitel à 1200 bauds, ou par une coupure de porteuse lorsqu'il reçoit à 75 bauds (ou par la séquence Protocole PRO1, RET2).</p>
                 <ul>
                     <li>
                         Le logiciel émet, suivant le cas, différentes séquences :
@@ -5088,7 +5088,7 @@
                 <h3 id="2-6-2">Le Langage Protocole</h3>
                 <p>Tous les ordres concernant le Protocole ou tous les messages engendrés par le Protocole sont introduits par des séquences différentes suivant le nombre d'octets utilisés :</p>
                 <ul>
-                    <li>ESC, 0x39, X = PRO, X</li>
+                    <li>ESC, 0x39, X = PRO1, X</li>
                     <li>ESC, 0x3A, X, Y = PRO2, X, Y</li>
                     <li>ESC, 0x3B, X, Y, Z = PRO3, X, Y, Z</li>
                 </ul>
@@ -5262,7 +5262,7 @@
                 <h4 id="2-6-4-3">Status Protocole</h4>
                 <p>Le status Protocole indique l'état de diffusion des acquittements d'aiguillage et l'état de retour d'acquittement. Le format de la commande est :</p>
                 <ul>
-                    <li>demande: PRO, STATUS PROTOCOLE (0x76) ;</li>
+                    <li>demande: PRO1, STATUS PROTOCOLE (0x76) ;</li>
                     <li>réponse: PRO2, REP STATUS PROTOCOLE (0x77), octet de status Protocole.</li>
                 </ul>
                 <p>L'octet de status Protocole a la configuration suivante :</p>
@@ -5310,7 +5310,7 @@
                 <span class="pageNumber" id="p139">139</span>
                 <p>La valeur de ces octets est donnée au <a href="#1-1-4">paragraphe 4 du chapitre 1 de la partie 1</a>.</p>
                 <p>Le traitement de la demande d'identification est géré au niveau Protocole.</p>
-                <p>La séquence de demande d'identification est PRO, ENQROM (0x7B)</p>
+                <p>La séquence de demande d'identification est PRO1, ENQROM (0x7B)</p>
                 <p class="remarque">Remarque</p>
                 <ul>
                     <li>Les séquences de téléchargement des deux zones en mémoire sauvegardée des Minitel 1 sont filtrées par le Protocole mais les données qui suivent, y compris SOH et EOT, transitent suivant les aiguillages.</li>
@@ -5330,8 +5330,8 @@
                 <p>Si le Protocole reçoit de la prise une commande de connexion, il doit assurer la connexion du modem et la liaison est établie s'il y a présence de porteuse ; cette commande a donc le même effet que la touche "Connexion/Fin." La commande de connexion peut être engendrée par un périphérique et la commande de déconnexion par un périphérique ou par le réseau vidéotex. Ces commandes sont inefficaces lorsque le terminal est déjà dans l'état demandé.</p>
                 <p>Ces commandes ont pour format :</p>
                 <ul>
-                    <li>connexion : PRO, CONNEXION (0x68) ;</li>
-                    <li>déconnexion : PRO, DECONNEXION (0x67).</li>
+                    <li>connexion : PRO1, CONNEXION (0x68) ;</li>
+                    <li>déconnexion : PRO1, DECONNEXION (0x67).</li>
                 </ul>
                 <p>La réception de la séquence de déconnexion, envoyée par un périphérique en phase de connexion automatique, provoque le retour immédiat à l'état local.</p>
                 <h4 id="2-6-7-2">Activation de la procédure de correction d'erreur</h4>
@@ -5346,7 +5346,7 @@
                 <ul>
                     <li><b>Retournement pour que le Minitel émette à 1200 bauds</b> et reçoive à 75 bauds.
                         <ul>
-                            <li>Commande : PRO, RET1 (0x6C).</li>
+                            <li>Commande : PRO1, RET1 (0x6C).</li>
                             <li>Acquittement reçu par le réseau vidéotex : SEP 0x51.</li>
                             <li>Acquittements reçus par le périphérique :
                                 <br>
@@ -5359,7 +5359,7 @@
                     <li>
                         <b>Retournement pour que le Minitel émette à 75 bauds</b> et reçoive à 1200 bauds (retournement inverse).
                         <ul>
-                            <li>Commandes : PRO, RET2 (0x6D) ; ou coupure de la porteuse 75 bauds du réseau vidéotex.</li>
+                            <li>Commandes : PRO1, RET2 (0x6D) ; ou coupure de la porteuse 75 bauds du réseau vidéotex.</li>
                             <li>Acquittement reçu par le réseau vidéotex : SEP 0x51.</li>
                             <li>
                                 Acquittements reçus par le périphérique :
@@ -5370,7 +5370,7 @@
                                 <br>
                                 SEP 0x58, SEP 0x58, SEP 0x59, SEP 0x53 si le retournement échoue et conduit à la déconnexion.
                             </li>
-                            <li>Acquittement reçu en provenance du réseau vidéotex: PRO, ACRET (0x6E).</li>
+                            <li>Acquittement reçu en provenance du réseau vidéotex: PRO1, ACRET (0x6E).</li>
                         </ul>
                         <p class="remarque">Remarque</p>
                         <ul>
@@ -5380,7 +5380,7 @@
                     </li>
                     <li>
                         <b>Retournement pour que le Minitel émette à 1200 bauds</b> à la connexion (mode opposé).
-                        <p>Dans l'état local le retournement du modem pour mettre le Minitel dans l'état opposé est commandé par un périphérique grâce à la séquence PRO, OPPO (0x6F) ou par l'utilisateur grâce à la commande Fnct M + R. Ces commandes sont acquittées par la séquence SEP 0x50 émise vers la prise et le logiciel met à 1 le bit EC du status terminal (<a href="#2-6-14-2">paragraphe 14.2</a>).</p>
+                        <p>Dans l'état local le retournement du modem pour mettre le Minitel dans l'état opposé est commandé par un périphérique grâce à la séquence PRO1, OPPO (0x6F) ou par l'utilisateur grâce à la commande Fnct M + R. Ces commandes sont acquittées par la séquence SEP 0x50 émise vers la prise et le logiciel met à 1 le bit EC du status terminal (<a href="#2-6-14-2">paragraphe 14.2</a>).</p>
                         <p>Dans l'état opposé, les commandes de retournement décrites ci-dessus sont sans effet. Le passage du mode opposé au mode retournable est commandé par la séquence PRO2, OPPORE (0x6F 0x31) émise par le périphérique ou le réseau vidéotex.</p>
                         <p>Cette commande est acquittée par la séquence PRO2, REP STATUS TERMINAL (0x71), octet de status envoyée vers le module initiateur de la commande. Dans l'octet de status le bit EC est positionné à zéro. Cette fonctionnalité offre l'avantage de pouvoir fonctionner à 1200 bauds à l'alternat entre deux Minitel.</p>
                     </li>
@@ -5435,7 +5435,7 @@
                 <h4 id="2-6-8-3">Status vitesse</h4>
                 <p>Ce status correspond à la programmation de la vitesse du module prise. Le format de la commande est :</p>
                 <ul>
-                    <li>demande : PRO, STATUS VITESSE (0x74) ;</li>
+                    <li>demande : PRO1, STATUS VITESSE (0x74) ;</li>
                     <li>réponse : PRO2, REP STATUS VITESSE (0x75), octet de status vitesse.</li>
                 </ul>
                 <p class="remarque">Remarque</p>
@@ -5491,7 +5491,7 @@
                 </ul>
                 <p class="remarque">Remarque</p>
                 <p>Quel que soit l'état du clavier, l'utilisateur peut mettre celui-ci dans un état standard grâce à la commande Fnct C + V. Tous les bits du status fonctionnement clavier sont remis à zéro.</p>
-                <p>La même action est provoquée par la réception de la commande PRO, RESET (0x7F) (<a href="#2-6-13-2">paragraphe 13.2</a>) par le Protocole.</p>
+                <p>La même action est provoquée par la réception de la commande PRO1, RESET (0x7F) (<a href="#2-6-13-2">paragraphe 13.2</a>) par le Protocole.</p>
                 <h4 id="2-6-9-2">Le verrouillage minuscules/majuscules</h4>
                 <p>Cette possibilité fait partie des commandes de modes de fonctionnement des modules (<a href="#2-6-11">paragraphe 11</a>). Elle est activée par l'utilisateur grâce à l'action Fnct C + M, ou par les autres modules par une commande Protocole de type PRO2, START (0x69), mode de fonctionnement (<a href="#2-6-11-1">paragraphe 11.1</a>).</p>
                 <h3 id="2-6-10">Commandes relatives à l'écran</h3>
@@ -5569,7 +5569,7 @@
                 <h4 id="2-6-11-3">Status mode de fonctionnement des modules</h4>
                 <p>Ce status correspond à la programmation des modes de fonctionnement particulier. La syntaxe est :</p>
                 <ul>
-                    <li>demande : PRO, STATUS FONCTIONNEMENT (0x72) ;</li>
+                    <li>demande : PRO1, STATUS FONCTIONNEMENT (0x72) ;</li>
                     <li>réponse : PRO2, REP STATUS FONCTIONNEMENT (0x73), octet de status fonctionnement.</li>
                 </ul>
                 <span class="pageNumber" id="p144">144</span>
@@ -5654,7 +5654,7 @@
                     <li>SEP 0x59, SEP 0x53 lorsque PT est actif.</li>
                 </ul>
                 <h4 id="2-6-13-2">Sur réception d'une commande de reset</h4>
-                <p>Une commande Protocole permet de réinitialiser le Minitel ; son format est : PRO, RESET (0x7F)</p>
+                <p>Une commande Protocole permet de réinitialiser le Minitel ; son format est : PRO1, RESET (0x7F)</p>
                 <p>L'acquittement correspond à la séquence SEP 0x5E envoyée vers tous les modules, quels que soient les états diffusion et retour d'acquittement.</p>
                 <p>Cette commande peut être émise par le réseau vidéotex ou un périphérique. L'utilisateur dispose d'une fonctionnalité équivalente grâce à l'action : Fnct T + V.</p>
                 <p>Les conséquences de la commande de reset sont les suivantes :</p>
