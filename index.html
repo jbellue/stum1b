@@ -5181,7 +5181,7 @@
                 <p>Ces commandes de status comprennent une demande et une réponse, et ont pour format :</p>
                 <ul>
                     <li>demande de status récepteur ou émetteur d'un module : PRO2, TO (0x62), code réception ou émission ;</li>
-                    <li>réponse à la demande (séquence d'acquittement) PROG, FROM (0x63), code réception ou émission du module, suivi de l'octet de status d'aiguillage récepteur ou émetteur de ce module. La réponse est envoyée par le Protocole uniquement au module ayant émis la demande, quel que soit par ailleurs le positionnement des aiguillages concernant ce module ;</li>
+                    <li>réponse à la demande (séquence d'acquittement) PRO3, FROM (0x63), code réception ou émission du module, suivi de l'octet de status d'aiguillage récepteur ou émetteur de ce module. La réponse est envoyée par le Protocole uniquement au module ayant émis la demande, quel que soit par ailleurs le positionnement des aiguillages concernant ce module ;</li>
                     <li>octet de status associé à un module.</li>
                 </ul>
                 <p>Le Protocole envoie un octet pour chaque module concerné. Cet octet contient, suivant la demande effectuée, le status de tous les aiguillages des autres modules vers ce module ou à partir de ce module.</p>
@@ -5448,8 +5448,8 @@
                 <p>Le Minitel 1B possède plusieurs configurations du clavier. Il est possible, grâce au langage Protocole, de programmer ce module et d'en connaître son état.</p>
                 <h5 id="2-6-9-1-1">Format des commandes</h5>
                 <ul>
-                    <li>Mise en œuvre : PROG, START (0x69), code récepteur clavier, mode de fonctionnement.</li>
-                    <li>Arrêt : PROG, STOP (0x6A), code récepteur clavier, mode de fonctionnement.</li>
+                    <li>Mise en œuvre : PRO3, START (0x69), code récepteur clavier, mode de fonctionnement.</li>
+                    <li>Arrêt : PRO3, STOP (0x6A), code récepteur clavier, mode de fonctionnement.</li>
                 </ul>
                 <p>Le code récepteur clavier a pour valeur 0x59.</p>
                 <p>
@@ -5463,7 +5463,7 @@
                 <p>Ces commandes peuvent être émises par le réseau vidéotex ou un périphérique.</p>
                 <h5 id="2-6-9-1-2">Acquittement</h5>
                 <p>Ces commandes sont acquittées par le Protocole vers le module initiateur par la séquence :</p>
-                PROG, REP STATUS CLAVIER (0x73), code récepteur clavier, octet de status fonctionnement clavier.
+                PRO3, REP STATUS CLAVIER (0x73), code récepteur clavier, octet de status fonctionnement clavier.
                 <p>L'octet de status fonctionnement clavier a la configuration suivante :</p>
                 <table class="light-blue">
                     <tbody>
@@ -5487,7 +5487,7 @@
                 <p>Ce status correspond à la programmation des modes de fonctionnement du clavier. La syntaxe est :</p>
                 <ul>
                     <li>demande : PRO2, STATUS CLAVIER (0x72), code récepteur clavier ;</li>
-                    <li>réponse : PROG, REP STATUS CLAVIER (0x73), code récepteur clavier, octet de status fonctionnement clavier.</li>
+                    <li>réponse : PRO3, REP STATUS CLAVIER (0x73), code récepteur clavier, octet de status fonctionnement clavier.</li>
                 </ul>
                 <p class="remarque">Remarque</p>
                 <p>Quel que soit l'état du clavier, l'utilisateur peut mettre celui-ci dans un état standard grâce à la commande Fnct C + V. Tous les bits du status fonctionnement clavier sont remis à zéro.</p>
